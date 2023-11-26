@@ -67,7 +67,7 @@ async def chart_day(interaction: discord.Interaction):
   day_chart = scrapeMelon.getList("DAY").decode()
   data = json.loads(day_chart)
   print(data)
-  embed = discord.Embed(title="Top 10 Songs - Daily Melon Chart")
+  embed = discord.Embed(title="Top 10 Songs - Daily Melon Chart", color=discord.Color.red())
 
   for i in range(1, 26):
       item_key = str(i)
@@ -89,7 +89,7 @@ async def chart_week(interaction: discord.Interaction):
   week_chart = scrapeMelon.getList("WEEK").decode()
   data = json.loads(week_chart)
   print(data)
-  embed = discord.Embed(title="Top 10 Songs - Weekly Melon Chart")
+  embed = discord.Embed(title="Top 10 Songs - Weekly Melon Chart", color=discord.Color.red())
 
   for i in range(1, 26):
       item_key = str(i)
@@ -111,7 +111,7 @@ async def chart_month(interaction: discord.Interaction):
   month_chart = scrapeMelon.getList("MONTH").decode()
   data = json.loads(month_chart)
   print(data)
-  embed = discord.Embed(title="Top 10 Songs - Monthly Melon Chart")
+  embed = discord.Embed(title="Top 10 Songs - Monthly Melon Chart", color=discord.Color.red())
   for i in range(1, 26):
       item_key = str(i)
       item_data = data.get(item_key)
