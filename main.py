@@ -5,7 +5,12 @@ from discord import app_commands
 import os
 import json
 
-MY_GUILD = discord.Object(id=settings.GUILDS_ID)
+guild_id = None
+@bot.event
+async def on_guild_join(guild):
+  guild_id = guild.id
+
+MY_GUILD = discord.Object(id=guild_id)
 class MyClient(discord.Client):
   def __init__(self, *, intents: discord.Intents):
     super().__init__(intents=intents)
