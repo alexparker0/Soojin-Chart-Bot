@@ -5,7 +5,7 @@ from discord import app_commands
 import os
 import json
 
-MY_GUILD = discord.Object(id=1176471349896683550)
+MY_GUILD = discord.Object(id=settings.GUILDS_ID)
 class MyClient(discord.Client):
   def __init__(self, *, intents: discord.Intents):
     super().__init__(intents=intents)
