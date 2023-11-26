@@ -5,12 +5,6 @@ from discord import app_commands
 import os
 import json
 
-guild_id = None
-@bot.event
-async def on_guild_join(guild):
-  guild_id = guild.id
-
-MY_GUILD = discord.Object(id=guild_id)
 class MyClient(discord.Client):
   def __init__(self, *, intents: discord.Intents):
     super().__init__(intents=intents)
@@ -27,10 +21,19 @@ class MyClient(discord.Client):
     # This copies the global commands over to your guild.
     self.tree.copy_global_to(guild=MY_GUILD)
     await self.tree.sync(guild=MY_GUILD)
-
-
+    
+MY_GUILD = discord.Object(id=guild_id)
 intents = discord.Intents.default()
 client = MyClient(intents=intents)
+@client.event
+async def on_guild_join(guild):
+  guild_id = guild.id
+
+
+
+
+
+
 
 def truncate_string(original_string, max_length):
   if len(original_string) > max_length:
