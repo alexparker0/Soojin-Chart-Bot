@@ -141,4 +141,4 @@ async def search_lyrics(ctx, song_name: str):
     print(send_lyrics)
     await ctx.followup.send(send_lyrics)
 
-bot.run("MTE3NjQ3MTU0ODM3OTU0OTc5Ng.GRUbG9.oC4n2uf-2CFD2k7jxeJ62Q3Jv7ysXB_Boop4Mw")
+bot.run("TOKEN")
